@@ -10,7 +10,12 @@
             <span class="review">{{i.review}}</span>
         </div>
         <button @click="deleteReview(index)" class="button3">Delete Review</button>
+        
     </div>
+    <div>  
+            <button @click="goFav" class="button1">Favourites</button>
+            
+        </div>
   </div>
 </template>
 
@@ -20,7 +25,10 @@ export default {
     methods:{
         deleteReview(index){
             this.$store.commit('deleteMyReviewAndVote',index)
-        }
+        },
+        goFav(){
+            this.$router.push('/favourites')
+        },
     }
 
 }
@@ -31,6 +39,23 @@ export default {
         width:200px;
         height:auto;
     }
+    .button1 {
+        background-color: chocolate;
+        border: 1px darkgreen;
+        border-radius: 12px;
+        color: white; 
+        padding: 10px 10px; 
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 12px;
+        margin: 4px 2px;
+        cursor: pointer;
+        opacity: 0.6;
+        transition: 0.3s;
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+    .button1:hover {opacity: 1}
     .button3 {
         background-color: darkgreen;
         border: 1px chocolate;

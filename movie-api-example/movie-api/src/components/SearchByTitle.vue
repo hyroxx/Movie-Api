@@ -48,6 +48,7 @@ export default {
                 this.$store.commit('setSearchRes',res.data)
             });
             
+            
         },
         setFavourite(i){
             //console.log(i)
